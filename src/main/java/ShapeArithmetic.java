@@ -1,12 +1,12 @@
-public class AreaCalculator {
-    private static AreaCalculator instance;
+public class ShapeArithmetic {
+    private static ShapeArithmetic instance;
 
-    private AreaCalculator() {
+    private ShapeArithmetic() {
     }
 
-    public static AreaCalculator getInstance() {
+    public static ShapeArithmetic getInstance() {
         if (instance == null) {
-            instance = new AreaCalculator();
+            instance = new ShapeArithmetic();
         }
         return instance;
     }
@@ -28,13 +28,9 @@ public class AreaCalculator {
         }
     }
 
-//    public  float findArea(Shape triangle){
-//        return (float) (0.5 * triangle.base * triangle.height);
-//    }
-//
-//    public float findArea(Shape rectangle){
-//        return  (rectangle.length * rectangle.breadth);
-//    }
-
+    public float findCircumference(Shape shape){
+        CircumferenceCalculator circumferenceCalculator = new CircumferenceCalculator(this);
+        return circumferenceCalculator.findCircumference(shape);
+    }
 
 }
